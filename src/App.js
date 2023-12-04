@@ -6,7 +6,6 @@ import {
   XIcon,
 } from "react-share"
 import { FaGithub } from "react-icons/fa"
-import { IconContext } from 'react-icons'
 
 const App = () => {
   const [mode, setMode] = useState(0);
