@@ -47,6 +47,9 @@ const App = () => {
         tabIndex="0"
         onClick={() => setMode((mode + 1) % mode_array.length)}> {(data / mode_array[mode][0]).toFixed(3)} {mode_array[mode][1]}
       </div>
+      <div className='info'>
+        <a href='https://github.com/oshamashama/owarukana/'>GitHub</a>
+      </div>
     </div >
   </>;
 }
