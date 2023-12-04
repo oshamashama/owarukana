@@ -1,6 +1,12 @@
 import './App.css';
 import { useState, useEffect } from 'react'
 import Data from './deadline.json';
+import {
+  TwitterShareButton,
+  XIcon,
+} from "react-share"
+import { FaGithub } from "react-icons/fa"
+import { IconContext } from 'react-icons'
 
 const App = () => {
   const [mode, setMode] = useState(0);
@@ -35,6 +41,9 @@ const App = () => {
     [mode, type]
   );
 
+  const url = 'https://oshamashama.github.io/owarukana/'
+  const content = `${Data.data[type].name} まで，あと${(data / mode_array[mode][0]).toFixed(3)} ${mode_array[mode][1]}`
+
 
   return <>
     <div className="App">
@@ -47,8 +56,15 @@ const App = () => {
         tabIndex="0"
         onClick={() => setMode((mode + 1) % mode_array.length)}> {(data / mode_array[mode][0]).toFixed(3)} {mode_array[mode][1]}
       </div>
+
       <div className='info'>
-        <a href='https://github.com/oshamashama/owarukana/'>GitHub</a>
+        <TwitterShareButton url={url} title={`${content}`} hashtags={['owarukana']}
+        >
+          <XIcon size={60} round />
+        </TwitterShareButton>
+        <a href={'https://github.com/oshamashama/owarukana/'}>
+          <FaGithub size={60} color='#FFFFFF' />
+        </a>
       </div>
     </div >
   </>;
