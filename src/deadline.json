@@ -5,28 +5,32 @@
       "year": 2024,
       "month": 2,
       "day": 1,
-      "hour": 17
+      "hour": 16,
+      "minute": 30
     },
     {
       "name": "卒研発表",
       "year": 2024,
       "month": 2,
       "day": 13,
-      "hour": 9
+      "hour": 9,
+      "minute": 0
     },
     {
       "name": "卒業",
       "year": 2024,
       "month": 3,
       "day": 25,
-      "hour": 12
+      "hour": 11,
+      "minute": 30
     },
     {
       "name": "2024年",
       "year": 2024,
       "month": 1,
       "day": 1,
-      "hour": 0
+      "hour": 0,
+      "minute": 0
     }
   ]
 }

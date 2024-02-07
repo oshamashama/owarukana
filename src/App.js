@@ -11,7 +11,7 @@ const App = () => {
   const [mode, setMode] = useState(0);
   const [type, setType] = useState(0);
 
-  const limit = new Date(Data.data[type].year, Data.data[type].month - 1, Data.data[type].day, Data.data[type].hour)
+  const limit = new Date(Data.data[type].year, Data.data[type].month - 1, Data.data[type].day, Data.data[type].hour, Data.data[type].minute,)
   const [data, setData] = useState((limit.getTime() - Date.now()) / 1000);
 
   const mode_array = [
@@ -29,7 +29,8 @@ const App = () => {
       const lim = new Date(Data.data[type].year,
         Data.data[type].month - 1,
         Data.data[type].day,
-        Data.data[type].hour);
+        Data.data[type].hour,
+        Data.data[type].minute,);
       setData((lim.getTime() - now.getTime()));
 
     }, 50);
