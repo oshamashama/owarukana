@@ -55,22 +55,46 @@ const App = () => {
   return (
     <>
       <div className="App">
-        <div
-          role="button"
-          tabIndex="0"
-          onClick={() => setType((type + 1) % Data.length)}
-        >
-          {" "}
-          {Data[type].name} まで，あと{" "}
-        </div>
-        <div
-          role="button"
-          tabIndex="0"
-          onClick={() => setMode((mode + 1) % mode_array.length)}
-        >
-          {" "}
-          {(data / mode_array[mode][0]).toFixed(3)} {mode_array[mode][1]}
-        </div>
+        {data > 0 ? (
+          <>
+            <div
+              role="button"
+              tabIndex="0"
+              onClick={() => setType((type + 1) % Data.length)}
+            >
+              {" "}
+              {Data[type].name} まで，あと{" "}
+            </div>
+            <div
+              role="button"
+              tabIndex="0"
+              onClick={() => setMode((mode + 1) % mode_array.length)}
+            >
+              {" "}
+              {(data / mode_array[mode][0]).toFixed(3)} {mode_array[mode][1]}
+            </div>
+          </>
+        ) : (
+          <>
+            <div
+              role="button"
+              tabIndex="0"
+              onClick={() => setType((type + 1) % Data.length)}
+            >
+              {" "}
+              {Data[type].name} から，既に{" "}
+            </div>
+            <div
+              role="button"
+              tabIndex="0"
+              onClick={() => setMode((mode + 1) % mode_array.length)}
+            >
+              {" "}
+              {-(data / mode_array[mode][0]).toFixed(3)} {mode_array[mode][1]}
+              {" 経過🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉"}
+            </div>
+          </>
+        )}
 
         <div className="info">
           <TwitterShareButton
