@@ -39,6 +39,14 @@
       "day": 15,
       "hour": 0,
       "minute": 0
+    },
+    {
+      "name": "2025年",
+      "year": 2025,
+      "month": 1,
+      "day": 1,
+      "hour": 0,
+      "minute": 0
     }
   ]
 }
