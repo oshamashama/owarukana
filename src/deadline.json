@@ -47,6 +47,14 @@
       "day": 1,
       "hour": 0,
       "minute": 0
+    },
+    {
+      "name": "CS修論",
+      "year": 2026,
+      "month": 1,
+      "day": 6,
+      "hour": 12,
+      "minute": 0
     }
   ]
 }
