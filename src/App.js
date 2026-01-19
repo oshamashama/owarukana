@@ -6,6 +6,7 @@ import { FaGithub } from "react-icons/fa";
 import { MdSwapHoriz } from "react-icons/md";
 
 // Helper function to create a Date object in JST (UTC+9)
+// The deadline dates in JSON are specified in JST timezone
 const createJSTDate = (year, month, day, hour, minute) => {
   // Create a date string in ISO format for JST timezone
   // month is 1-indexed in the input, so we need to pad with 0
@@ -13,14 +14,9 @@ const createJSTDate = (year, month, day, hour, minute) => {
   return new Date(dateStr);
 };
 
-// Helper function to get current time in JST
-const getNowInJST = () => {
-  return new Date();
-};
-
 const Data = datajson.data.filter((d) => {
   const dd = createJSTDate(d.year, d.month, d.day + 3, d.hour, d.minute);
-  const now = getNowInJST();
+  const now = new Date();
   return dd > now;
 });
 const App = () => {
@@ -46,7 +42,7 @@ const App = () => {
   useEffect(
     () => {
       const interval = setInterval(() => {
-        const now = getNowInJST();
+        const now = new Date();
         const lim = createJSTDate(
           Data[type].year,
           Data[type].month,
