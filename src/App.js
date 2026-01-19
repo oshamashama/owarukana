@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import datajson from "./deadline.json";
 import { TwitterShareButton, XIcon } from "react-share";
 import { FaGithub } from "react-icons/fa";
+import { MdSwapHoriz } from "react-icons/md";
 
 const Data = datajson.data.filter((d) => {
   const dd = new Date(d.year, d.month - 1, d.day + 3, d.hour, d.minute);
@@ -62,7 +63,7 @@ const App = () => {
               tabIndex="0"
               onClick={() => setType((type + 1) % Data.length)}
             >
-              {" "}
+              <MdSwapHoriz style={{ verticalAlign: 'middle', marginRight: '0.2em' }} />
               {Data[type].name} まで，あと{" "}
             </div>
             <div
@@ -70,7 +71,7 @@ const App = () => {
               tabIndex="0"
               onClick={() => setMode((mode + 1) % mode_array.length)}
             >
-              {" "}
+              <MdSwapHoriz style={{ verticalAlign: 'middle', marginRight: '0.2em' }} />
               {(data / mode_array[mode][0]).toFixed(3)} {mode_array[mode][1]}
             </div>
           </>
@@ -81,7 +82,7 @@ const App = () => {
               tabIndex="0"
               onClick={() => setType((type + 1) % Data.length)}
             >
-              {" "}
+              <MdSwapHoriz style={{ verticalAlign: 'middle', marginRight: '0.2em' }} />
               {Data[type].name} から，既に{" "}
             </div>
             <div
@@ -89,7 +90,7 @@ const App = () => {
               tabIndex="0"
               onClick={() => setMode((mode + 1) % mode_array.length)}
             >
-              {" "}
+              <MdSwapHoriz style={{ verticalAlign: 'middle', marginRight: '0.2em' }} />
               {-(data / mode_array[mode][0]).toFixed(3)} {mode_array[mode][1]}
               {" 経過🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉"}
             </div>
