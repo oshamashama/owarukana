@@ -1,12 +1,7 @@
 // Test for JST date conversion
 // This test verifies that dates are correctly interpreted as JST (UTC+9)
 
-// Extract the createJSTDate function for testing
-const createJSTDate = (year, month, day, hour, minute) => {
-  const jstOffset = 9 * 60; // JST offset in minutes
-  const date = new Date(Date.UTC(year, month - 1, day, hour, minute));
-  return new Date(date.getTime() - jstOffset * 60 * 1000);
-};
+import { createJSTDate } from './utils/dateUtils';
 
 describe('createJSTDate', () => {
   test('should create date representing JST midnight as correct UTC time', () => {
