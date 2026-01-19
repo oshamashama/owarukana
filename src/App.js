@@ -5,17 +5,26 @@ import { TwitterShareButton, XIcon } from "react-share";
 import { FaGithub } from "react-icons/fa";
 import { MdSwapHoriz } from "react-icons/md";
 
+// Helper function to create a Date object in JST (UTC+9)
+// The deadline dates in JSON are specified in JST timezone
+const createJSTDate = (year, month, day, hour, minute) => {
+  // Create a date string in ISO format for JST timezone
+  // month is 1-indexed in the input, so we need to pad with 0
+  const dateStr = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}T${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}:00+09:00`;
+  return new Date(dateStr);
+};
+
 const Data = datajson.data.filter((d) => {
-  const dd = new Date(d.year, d.month - 1, d.day + 3, d.hour, d.minute);
+  const dd = createJSTDate(d.year, d.month, d.day + 3, d.hour, d.minute);
   const now = new Date();
   return dd > now;
 });
 const App = () => {
   const [mode, setMode] = useState(0);
   const [type, setType] = useState(0);
-  const limit = new Date(
+  const limit = createJSTDate(
     Data[type].year,
-    Data[type].month - 1,
+    Data[type].month,
     Data[type].day,
     Data[type].hour,
     Data[type].minute
@@ -34,9 +43,9 @@ const App = () => {
     () => {
       const interval = setInterval(() => {
         const now = new Date();
-        const lim = new Date(
+        const lim = createJSTDate(
           Data[type].year,
-          Data[type].month - 1,
+          Data[type].month,
           Data[type].day,
           Data[type].hour,
           Data[type].minute

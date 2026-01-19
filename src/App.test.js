@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders deadline countdown', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  // Check that the app renders with deadline text
+  const deadlineText = screen.getByText(/まで，あと|から，既に/);
+  expect(deadlineText).toBeInTheDocument();
 });
