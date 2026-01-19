@@ -55,6 +55,14 @@
       "day": 6,
       "hour": 12,
       "minute": 0
+    },
+    {
+      "name": "2027年",
+      "year": 2027,
+      "month": 1,
+      "day": 1,
+      "hour": 0,
+      "minute": 0
     }
   ]
 }
